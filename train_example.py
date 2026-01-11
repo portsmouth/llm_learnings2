@@ -8,7 +8,7 @@ import torch.nn as nn
 from torch.nn import functional as F
 from load_midi_data import load_midi_dataset, get_batch
 from decode_midi import tokens_to_midi, play_midi
-from models import BigramLanguageModel
+from models import SimpleTransformer
 
 # Set random seed for reproducibility
 torch.manual_seed(1337)
@@ -17,6 +17,8 @@ torch.manual_seed(1337)
 batch_size = 64
 block_size = 256  # Context length
 max_iters = 5000
+head_size = 64
+n_embed = 256
 eval_interval = 500
 learning_rate = 3e-4
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -63,7 +65,8 @@ def estimate_loss():
 
 # Initialize model
 print("Initializing model...")
-model = BigramLanguageModel(vocab_size).to(device)
+
+model = SimpleTransformer(vocab_size, block_size, head_size, n_embed).to(device)
 print(f"Model parameters: {sum(p.numel() for p in model.parameters()):,}")
 
 # Create optimizer
