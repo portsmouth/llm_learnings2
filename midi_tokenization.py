@@ -1,12 +1,18 @@
-
-
-import mido
 import os
 
+import mido
+import pretty_midi
+from typing import List
+import glob
+from tqdm import tqdm
 
-import kagglehub
+datasets_dir = "./datasets"
+dataset = "kaggle"
 
-import kagglehub
+dataset_dir = f"{datasets_dir}/{dataset}"
+dataset_input_dir = f"{dataset_dir}/data"
+tokenized_output_dir = f"{dataset_dir}/tokenized_midi"
+tokenized_ints_output_dir = f"{dataset_dir}/tokenized_midi_int"
 
 # load and unpack midi file
 
@@ -28,10 +34,6 @@ def prepare_midi_file(input_file, output_file):
 
 
 
-import pretty_midi
-from typing import List
-import glob
-from tqdm import tqdm
 
 TIME_RESOLUTION_MS = 10      # smallest time step
 MAX_TIME_SHIFT_MS = 1000    # max single time-shift token
@@ -93,24 +95,24 @@ def midi_to_tokens(midi_path: str) -> List[str]:
 
 
 # Create output directory
-output_dir = "tokenized_midi"
-os.makedirs(output_dir, exist_ok=True)
+os.makedirs(tokenized_output_dir, exist_ok=True)
 
 # Find all MIDI files in kaggle_archive directory
-midi_files = glob.glob("kaggle_archive/**/*.mid", recursive=True)
-midi_files.extend(glob.glob("kaggle_archive/**/*.midi", recursive=True))
+midi_files = glob.glob(f"{dataset_input_dir}/**/*.mid", recursive=True)
+midi_files.extend(glob.glob(f"{dataset_input_dir}/**/*.midi", recursive=True))
 
 print(f"Found {len(midi_files)} MIDI files")
 
 # Process each MIDI file with progress bar
 for midi_file in tqdm(midi_files, desc="Tokenizing MIDI files"):
+    midi_file_path = midi_file.replace("\\", "/")
     try:
-        tokens = midi_to_tokens(midi_file)
+        tokens = midi_to_tokens(midi_file_path)
 
         # Create output filename preserving directory structure
-        rel_path = os.path.relpath(midi_file, "kaggle_archive")
+        rel_path = os.path.relpath(midi_file_path, f"{dataset_input_dir}")
         base_name = os.path.splitext(rel_path)[0]
-        token_file = os.path.join(output_dir, f"{base_name}_tokens.txt")
+        token_file = os.path.join(tokenized_output_dir, f"{base_name}_tokens.txt").replace("\\", "/")
 
         # Create subdirectories if needed
         os.makedirs(os.path.dirname(token_file), exist_ok=True)
@@ -123,6 +125,6 @@ for midi_file in tqdm(midi_files, desc="Tokenizing MIDI files"):
     except Exception as e:
         print(f"\nError processing {midi_file}: {e}")
 
-print(f"\nTokenization complete! Output saved to '{output_dir}' directory")
+print(f"\nTokenization complete! Output saved to '{tokenized_output_dir}' directory")
 
 
