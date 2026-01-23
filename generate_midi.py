@@ -21,7 +21,7 @@ def load_vocab(vocab_path='vocab.json'):
     return vocab
 
 
-def load_model(model_path, vocab_size, device='cpu', model_type='auto', block_size=256, head_size=64, n_embed=256):
+def load_model(model_path, vocab_size, device='cpu', model_type='auto'):
     """Load a trained model from checkpoint.
 
     Args:
@@ -29,16 +29,21 @@ def load_model(model_path, vocab_size, device='cpu', model_type='auto', block_si
         vocab_size: Size of vocabulary
         device: Device to load model on
         model_type: 'bigram', 'transformer', or 'auto' to detect from checkpoint
-        block_size: Context length (for transformer)
-        head_size: Head size (for transformer)
-        n_embed: Embedding dimension (for transformer)
     """
     # Load checkpoint to inspect architecture
     checkpoint = torch.load(model_path, map_location=device)
 
+    # Check if this is a full checkpoint with config or just state_dict
+    if isinstance(checkpoint, dict) and 'model' in checkpoint:
+        state_dict = checkpoint['model']
+        config = checkpoint.get('config', {})
+    else:
+        state_dict = checkpoint
+        config = {}
+
     # Auto-detect model type if needed
     if model_type == 'auto':
-        if 'position_embedding_table.weight' in checkpoint:
+        if 'position_embedding_table.weight' in state_dict:
             model_type = 'transformer'
         else:
             model_type = 'bigram'
@@ -46,27 +51,36 @@ def load_model(model_path, vocab_size, device='cpu', model_type='auto', block_si
 
     # Create appropriate model
     if model_type == 'transformer':
-        # Infer parameters from checkpoint
-        if 'position_embedding_table.weight' in checkpoint:
-            block_size = checkpoint['position_embedding_table.weight'].shape[0]
-        if 'token_embedding_table.weight' in checkpoint:
-            n_embed = checkpoint['token_embedding_table.weight'].shape[1]
-        # Head size is tricky - we can infer from sa_head structure
-        if 'sa_head.heads.0.key.weight' in checkpoint:
-            head_size = checkpoint['sa_head.heads.0.key.weight'].shape[0]
-            # Multiply by number of heads to get total
-            num_heads = sum(1 for k in checkpoint.keys() if k.startswith('sa_head.heads.') and k.endswith('.key.weight'))
-            head_size = head_size * num_heads
+        # Try to get parameters from config first, then infer from state_dict
+        block_size = config.get('block_size')
+        n_embed = config.get('n_embed')
+        n_layer = config.get('n_layer', 3)
+        n_head = config.get('n_head', 4)
+        dropout = config.get('dropout', 0.0)  # Dropout is 0.0 at inference time
 
-        # Check if feedforward layer exists in checkpoint
-        use_ffwd = 'ffwd.net.0.weight' in checkpoint
+        if block_size is None and 'position_embedding_table.weight' in state_dict:
+            block_size = state_dict['position_embedding_table.weight'].shape[0]
+        if n_embed is None and 'token_embedding_table.weight' in state_dict:
+            n_embed = state_dict['token_embedding_table.weight'].shape[1]
 
-        print(f"  Inferred parameters: block_size={block_size}, n_embed={n_embed}, head_size={head_size}, use_ffwd={use_ffwd}")
-        model = SimpleTransformer(vocab_size, block_size, head_size, n_embed, use_ffwd=use_ffwd).to(device)
+        # Infer number of layers from state_dict
+        if n_layer is None:
+            n_layer = sum(1 for k in state_dict.keys() if k.startswith('blocks.') and k.endswith('.ln1.weight'))
+
+        # Infer number of heads from attention structure
+        if n_head is None and 'blocks.0.sa_head.heads.0.key.weight' in state_dict:
+            n_head = sum(1 for k in state_dict.keys() if k.startswith('blocks.0.sa_head.heads.') and k.endswith('.key.weight'))
+
+        # Check if feedforward layer exists
+        use_ffwd = 'blocks.0.ffwd.net.0.weight' in state_dict
+
+        print(f"  Inferred parameters: block_size={block_size}, n_embed={n_embed}, n_layer={n_layer}, n_head={n_head}, dropout={dropout}, use_ffwd={use_ffwd}")
+        # Note: dropout is always 0.0 during inference (model.eval() disables dropout anyway)
+        model = SimpleTransformer(vocab_size, block_size, n_embed, n_layer=n_layer, n_head=n_head, dropout=0.0, use_ffwd=use_ffwd).to(device)
     else:
         model = BigramLanguageModel(vocab_size).to(device)
 
-    model.load_state_dict(checkpoint)
+    model.load_state_dict(state_dict)
     model.eval()
     return model, model_type
 

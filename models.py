@@ -59,8 +59,10 @@ class BigramLanguageModel(nn.Module):
             (B, T+max_new_tokens) tensor of generated token indices
         """
         for _ in range(max_new_tokens):
+
             # Get predictions
             logits, loss = self(idx)
+
             # Focus on last time step
             logits = logits[:, -1, :]  # (B, C)
 
@@ -91,6 +93,7 @@ class BigramLanguageModel(nn.Module):
 ###############################################################
 
 
+
 class Head(nn.Module):
     """One head of self-attention"""
 
@@ -119,72 +122,103 @@ class Head(nn.Module):
 class MultiHeadAttention(nn.Module):
     """Multiple heads of self-attention in parallel"""
 
-    def __init__(self, num_heads, head_size, block_size, n_embed):
+    def __init__(self, num_heads, head_size, block_size, n_embed, dropout=0.0):
         super().__init__()
         self.heads = nn.ModuleList([Head(head_size, block_size, n_embed) for _ in range(num_heads)])
         self.proj = nn.Linear(num_heads * head_size, n_embed)
+        self.dropout = nn.Dropout(dropout)
 
     def forward(self, X):
         out = torch.cat([h(X) for h in self.heads], dim=-1)
-        out = self.proj(out)
+        out = self.dropout(self.proj(out))
         return out
 
 
 class FeedForward(nn.Module):
     """A simple feed-forward neural network"""
 
-    def __init__(self, n_embed):
+    def __init__(self, n_embed, dropout=0.0):
         super().__init__()
         self.net = nn.Sequential(
             nn.Linear(n_embed, 4 * n_embed),
             nn.ReLU(),
             nn.Linear(4 * n_embed, n_embed),
+            nn.Dropout(dropout),
         )
 
     def forward(self, X):
         return self.net(X)
 
 
+class Block(nn.Module):
+    """Transformer block: communication followed by computation"""
+
+    def __init__(self, block_size, n_embed, n_head=4, dropout=0.0, use_ffwd=True):
+        super().__init__()
+        assert n_embed % n_head == 0, "n_embed must be divisible by n_head"
+        head_size = n_embed // n_head
+        self.sa_head = MultiHeadAttention(num_heads=n_head, head_size=head_size, block_size=block_size, n_embed=n_embed, dropout=dropout)
+        self.ln1 = nn.LayerNorm(n_embed)
+        self.use_ffwd = use_ffwd
+        if self.use_ffwd:
+            self.ffwd = FeedForward(n_embed, dropout=dropout)
+            self.ln2 = nn.LayerNorm(n_embed)
+
+    def forward(self, X):
+        X = X + self.sa_head(self.ln1(X))
+        if self.use_ffwd:
+            X = X + self.ffwd(self.ln2(X))
+        return X
+
+
+
+
 class SimpleTransformer(nn.Module):
     """
-    Simple transformer language model for MIDI generation.
+    Transformer language model for MIDI generation.
 
-    This model uses a simple embedding table to predict the next token
-    based on the current token, making it a bigram model.
+    Architecture follows nanoGPT style with:
+    - Token + position embeddings
+    - N transformer blocks with multi-head attention and feedforward
+    - Final layer normalization
+    - LM head for next token prediction
     """
 
-    def __init__(self, vocab_size, block_size, head_size, n_embed, use_ffwd=True):
+    def __init__(self, vocab_size, block_size, n_embed, n_layer=3, n_head=4, dropout=0.0, use_ffwd=True):
         """
-        Initialize the language model with embedding layers and attention mechanism.
+        Initialize the language model.
+
         Args:
-            vocab_size (int): The size of the vocabulary (number of unique tokens).
-            block_size (int): The maximum context length for predictions (sequence length).
-            head_size (int): The dimensionality of the attention head.
-            n_embed (int): The embedding dimension size for token representations.
-            use_ffwd (bool): Whether to include the feedforward layer (default: True).
+            vocab_size (int): Size of the vocabulary (number of unique tokens).
+            block_size (int): Maximum context length (sequence length).
+            n_embed (int): Embedding dimension size.
+            n_layer (int): Number of transformer blocks (default: 3).
+            n_head (int): Number of attention heads (default: 4).
+            dropout (float): Dropout probability (default: 0.0).
+            use_ffwd (bool): Whether to include feedforward layers (default: True).
         """
         super().__init__()
 
         self.n_embed = n_embed
         self.block_size = block_size
-        self.head_size = head_size
+        self.n_head = n_head
         self.use_ffwd = use_ffwd
 
-        # Embedding layer that maps token indices to dense vectors of size n_embed.
-        self.token_embedding_table = nn.Embedding(vocab_size, self.n_embed)
+        # Token and position embeddings
+        self.token_embedding_table = nn.Embedding(vocab_size, n_embed)
+        self.position_embedding_table = nn.Embedding(block_size, n_embed)
+        self.dropout = nn.Dropout(dropout)
 
-        # Embedding layer that maps position indices to dense vectors of size n_embed.
-        self.position_embedding_table = nn.Embedding(self.block_size, self.n_embed)
+        # Transformer blocks
+        self.blocks = nn.Sequential(
+            *[Block(block_size, n_embed, n_head=n_head, dropout=dropout, use_ffwd=use_ffwd) for _ in range(n_layer)]
+        )
 
-        # Self-attention head for processing token relationships.
-        self.sa_head = MultiHeadAttention(num_heads=4, head_size= self.head_size // 4, block_size=self.block_size, n_embed=self.n_embed)
+        # Final layer norm (nanoGPT style)
+        self.ln_f = nn.LayerNorm(n_embed)
 
-        # Add FeedForward layer for additional processing (optional).
-        if self.use_ffwd:
-            self.ffwd = FeedForward(self.n_embed)
-
-        # Linear layer that projects embeddings back to vocabulary size for next token prediction.
-        self.lm_head = nn.Linear(self.n_embed, vocab_size)
+        # Output projection to vocabulary
+        self.lm_head = nn.Linear(n_embed, vocab_size)
 
 
     def forward(self, idx, targets=None):
@@ -205,11 +239,10 @@ class SimpleTransformer(nn.Module):
         pos_emb = self.position_embedding_table(torch.arange(idx.size(1), device=idx.device))  # (T, C)
 
         X = tok_emb + pos_emb  # (B, T, C)
+        X = self.dropout(X)  # Apply dropout to embeddings
 
-        X = self.sa_head(X)  # apply one head of self-attention (B, T, C)
-
-        if self.use_ffwd:
-            X = self.ffwd(X)  # (B, T, C)
+        X = self.blocks(X)  # (B, T, C)
+        X = self.ln_f(X)  # Final layer norm (B, T, C)
 
         logits = self.lm_head(X)  # (B, T, vocab_size)
 
