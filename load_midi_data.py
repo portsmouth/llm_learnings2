@@ -57,7 +57,7 @@ def load_all_midi_data(data_dir='tokenized_midi_int', max_files=None):
         if max_files and file_count >= max_files:
             break
 
-    print(f"✓ Loaded {file_count} files with {sum(len(s) for s in all_sequences)} total tokens")
+    print(f"Loaded {file_count} files with {sum(len(s) for s in all_sequences)} total tokens")
     return all_sequences
 
 
@@ -136,7 +136,7 @@ def load_midi_dataset(
     all_tokens = concatenate_sequences(sequences, add_separator=add_separators)
     total_tokens = len(all_tokens)
 
-    print(f"✓ Total tokens: {total_tokens:,}")
+    print(f"Total tokens: {total_tokens:,}")
 
     # Convert to tensor
     data = torch.tensor(all_tokens, dtype=torch.long, device=device)
@@ -223,4 +223,4 @@ if __name__ == '__main__':
     print(f"  Input:  {xb[0][:20].tolist()}")
     print(f"  Target: {yb[0][:20].tolist()}")
 
-    print("\n✓ Data loader test complete!")
+    print("\nData loader test complete!")

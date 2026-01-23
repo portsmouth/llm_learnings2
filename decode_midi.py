@@ -95,7 +95,7 @@ def tokens_to_midi(token_ids, output_path='generated_output.mid', ticks_per_beat
 
     # Save MIDI file
     mid.save(output_path)
-    print(f"✓ MIDI file saved: {output_path}")
+    print(f"- MIDI file saved: {output_path}")
 
     return output_path
 
@@ -113,13 +113,13 @@ def play_midi(midi_path):
 
     if sys.platform == 'win32':
         os.startfile(midi_path)
-        print(f"✓ Playing MIDI with system default player: {midi_path}")
+        print(f"- Playing MIDI with system default player: {midi_path}")
     elif sys.platform == 'darwin':  # macOS
         os.system(f'open "{midi_path}"')
-        print(f"✓ Playing MIDI with system default player: {midi_path}")
+        print(f"- Playing MIDI with system default player: {midi_path}")
     else:  # Linux and others
         os.system(f'xdg-open "{midi_path}"')
-        print(f"✓ Playing MIDI with system default player: {midi_path}")
+        print(f"- Playing MIDI with system default player: {midi_path}")
 
 
 def play_with_pygame(midi_path, loop=False):
@@ -184,7 +184,7 @@ def play_with_pygame(midi_path, loop=False):
             print("\n\n⏹ Playback stopped")
             return True
 
-        print("\n\n✓ Playback complete")
+        print("\n\n- Playback complete")
         pygame.mixer.quit()
         return True
 

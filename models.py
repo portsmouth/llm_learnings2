@@ -153,7 +153,7 @@ class SimpleTransformer(nn.Module):
     based on the current token, making it a bigram model.
     """
 
-    def __init__(self, vocab_size, block_size, head_size, n_embed):
+    def __init__(self, vocab_size, block_size, head_size, n_embed, use_ffwd=True):
         """
         Initialize the language model with embedding layers and attention mechanism.
         Args:
@@ -161,12 +161,14 @@ class SimpleTransformer(nn.Module):
             block_size (int): The maximum context length for predictions (sequence length).
             head_size (int): The dimensionality of the attention head.
             n_embed (int): The embedding dimension size for token representations.
+            use_ffwd (bool): Whether to include the feedforward layer (default: True).
         """
         super().__init__()
 
         self.n_embed = n_embed
         self.block_size = block_size
         self.head_size = head_size
+        self.use_ffwd = use_ffwd
 
         # Embedding layer that maps token indices to dense vectors of size n_embed.
         self.token_embedding_table = nn.Embedding(vocab_size, self.n_embed)
@@ -177,8 +179,9 @@ class SimpleTransformer(nn.Module):
         # Self-attention head for processing token relationships.
         self.sa_head = MultiHeadAttention(num_heads=4, head_size= self.head_size // 4, block_size=self.block_size, n_embed=self.n_embed)
 
-        # Add FeedForward layer for additional processing (optional, can be added later).
-        self.ffwd = FeedForward(self.n_embed)
+        # Add FeedForward layer for additional processing (optional).
+        if self.use_ffwd:
+            self.ffwd = FeedForward(self.n_embed)
 
         # Linear layer that projects embeddings back to vocabulary size for next token prediction.
         self.lm_head = nn.Linear(self.n_embed, vocab_size)
@@ -205,7 +208,8 @@ class SimpleTransformer(nn.Module):
 
         X = self.sa_head(X)  # apply one head of self-attention (B, T, C)
 
-        X = self.ffwd(X)  # (B, T, C)
+        if self.use_ffwd:
+            X = self.ffwd(X)  # (B, T, C)
 
         logits = self.lm_head(X)  # (B, T, vocab_size)
 

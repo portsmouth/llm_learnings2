@@ -13,7 +13,7 @@ import json
 import os
 import sys
 from decode_midi import tokens_to_midi, play_midi
-from models import BigramLanguageModel
+from models import BigramLanguageModel, SimpleTransformer
 def load_vocab(vocab_path='vocab.json'):
     """Load vocabulary from JSON file."""
     with open(vocab_path, 'r') as f:
@@ -21,12 +21,54 @@ def load_vocab(vocab_path='vocab.json'):
     return vocab
 
 
-def load_model(model_path, vocab_size, device='cpu'):
-    """Load a trained model from checkpoint."""
-    model = BigramLanguageModel(vocab_size).to(device)
-    model.load_state_dict(torch.load(model_path, map_location=device))
+def load_model(model_path, vocab_size, device='cpu', model_type='auto', block_size=256, head_size=64, n_embed=256):
+    """Load a trained model from checkpoint.
+
+    Args:
+        model_path: Path to model checkpoint
+        vocab_size: Size of vocabulary
+        device: Device to load model on
+        model_type: 'bigram', 'transformer', or 'auto' to detect from checkpoint
+        block_size: Context length (for transformer)
+        head_size: Head size (for transformer)
+        n_embed: Embedding dimension (for transformer)
+    """
+    # Load checkpoint to inspect architecture
+    checkpoint = torch.load(model_path, map_location=device)
+
+    # Auto-detect model type if needed
+    if model_type == 'auto':
+        if 'position_embedding_table.weight' in checkpoint:
+            model_type = 'transformer'
+        else:
+            model_type = 'bigram'
+        print(f"  Auto-detected model type: {model_type}")
+
+    # Create appropriate model
+    if model_type == 'transformer':
+        # Infer parameters from checkpoint
+        if 'position_embedding_table.weight' in checkpoint:
+            block_size = checkpoint['position_embedding_table.weight'].shape[0]
+        if 'token_embedding_table.weight' in checkpoint:
+            n_embed = checkpoint['token_embedding_table.weight'].shape[1]
+        # Head size is tricky - we can infer from sa_head structure
+        if 'sa_head.heads.0.key.weight' in checkpoint:
+            head_size = checkpoint['sa_head.heads.0.key.weight'].shape[0]
+            # Multiply by number of heads to get total
+            num_heads = sum(1 for k in checkpoint.keys() if k.startswith('sa_head.heads.') and k.endswith('.key.weight'))
+            head_size = head_size * num_heads
+
+        # Check if feedforward layer exists in checkpoint
+        use_ffwd = 'ffwd.net.0.weight' in checkpoint
+
+        print(f"  Inferred parameters: block_size={block_size}, n_embed={n_embed}, head_size={head_size}, use_ffwd={use_ffwd}")
+        model = SimpleTransformer(vocab_size, block_size, head_size, n_embed, use_ffwd=use_ffwd).to(device)
+    else:
+        model = BigramLanguageModel(vocab_size).to(device)
+
+    model.load_state_dict(checkpoint)
     model.eval()
-    return model
+    return model, model_type
 
 
 def generate_midi_from_model(
@@ -85,7 +127,7 @@ def generate_midi_from_model(
 
     # Load model
     print(f"Loading model from {model_path}...")
-    model = load_model(model_path, vocab_size, device)
+    model, model_type = load_model(model_path, vocab_size, device)
     num_params = sum(p.numel() for p in model.parameters())
     print(f"  Model parameters: {num_params:,}")
 
