@@ -58,16 +58,44 @@ def ms_to_tokens(delta_ms: int, tempo: float = 120.0, division: int = 64) -> Lis
     return tokens
 
 
-def midi_to_tokens(midi_path: str) -> List[str]:
+def velocity_to_bin(velocity: int, num_bins: int = 8) -> int:
+    """
+    Quantize MIDI velocity (0-127) into bins.
 
+    Args:
+        velocity: MIDI velocity value (0-127)
+        num_bins: Number of bins to quantize into (default: 8)
+
+    Returns:
+        Bin number (0 to num_bins-1)
+    """
+    # Ensure velocity is in valid range
+    velocity = max(0, min(127, velocity))
+    # Quantize into bins
+    bin_size = 128 / num_bins
+    return min(int(velocity / bin_size), num_bins - 1)
+
+
+def midi_to_tokens(midi_path: str, use_velocity: bool = True) -> List[str]:
+    """
+    Convert MIDI file to sequence of tokens.
+
+    Args:
+        midi_path: Path to MIDI file
+        use_velocity: Whether to include velocity tokens (default: True)
+
+    Returns:
+        List of token strings
+    """
     midi = pretty_midi.PrettyMIDI(midi_path)
 
     events = []
 
     for instrument in midi.instruments:
         for note in instrument.notes:
-            events.append((note.start, "ON", note.pitch))
-            events.append((note.end, "OFF", note.pitch))
+            # Include velocity in the event tuple
+            events.append((note.start, "ON", note.pitch, note.velocity))
+            events.append((note.end, "OFF", note.pitch, 0))  # Note off doesn't need velocity
 
     # Sort by time, NOTE_OFF before NOTE_ON at same time
     events.sort(key=lambda x: (x[0], x[1] == "ON"))
@@ -75,7 +103,7 @@ def midi_to_tokens(midi_path: str) -> List[str]:
     tokens = []
     current_time = 0.0
 
-    for time, kind, pitch in events:
+    for time, kind, pitch, velocity in events:
         delta_ms = int((time - current_time) * 1000)
 
         if delta_ms > 0:
@@ -83,6 +111,10 @@ def midi_to_tokens(midi_path: str) -> List[str]:
             current_time = time
 
         if kind == "ON":
+            if use_velocity:
+                # Add velocity token before note on
+                vel_bin = velocity_to_bin(velocity)
+                tokens.append(f"VEL_{vel_bin}")
             tokens.append(f"NOTE_ON_{pitch}")
         else:
             tokens.append(f"NOTE_OFF_{pitch}")

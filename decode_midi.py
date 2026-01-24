@@ -17,6 +17,23 @@ def load_reverse_vocab(vocab_path='reverse_vocab.json'):
     return {int(k): v for k, v in reverse_vocab.items()}
 
 
+def bin_to_velocity(vel_bin: int, num_bins: int = 8) -> int:
+    """
+    Convert velocity bin back to MIDI velocity value.
+
+    Args:
+        vel_bin: Velocity bin (0 to num_bins-1)
+        num_bins: Number of bins (default: 8)
+
+    Returns:
+        MIDI velocity value (0-127)
+    """
+    # Use the middle of each bin
+    bin_size = 128 / num_bins
+    velocity = int((vel_bin + 0.5) * bin_size)
+    return max(0, min(127, velocity))
+
+
 def tokens_to_midi(token_ids, output_path='generated_output.mid', ticks_per_beat=480):
     """
     Convert a sequence of token IDs to a MIDI file.
@@ -47,6 +64,7 @@ def tokens_to_midi(token_ids, output_path='generated_output.mid', ticks_per_beat
     # Track currently playing notes to ensure proper note offs
     active_notes = {}  # {note: time_activated}
     current_time = 0
+    current_velocity = 64  # Default velocity (mezzo-forte)
 
     # Convert ticks: 64th notes to MIDI ticks
     # 1 beat = 4 quarter notes = 16 sixteenth notes = 64 sixty-fourth notes
@@ -65,11 +83,16 @@ def tokens_to_midi(token_ids, output_path='generated_output.mid', ticks_per_beat
         if token.startswith('<') and token.endswith('>'):
             continue
 
-        if token.startswith('NOTE_ON_'):
+        if token.startswith('VEL_'):
+            # Extract velocity bin and convert to MIDI velocity
+            vel_bin = int(token.split('_')[-1])
+            current_velocity = bin_to_velocity(vel_bin)
+
+        elif token.startswith('NOTE_ON_'):
             # Extract note number
             note = int(token.split('_')[-1])
-            # Add note on event
-            track.append(Message('note_on', note=note, velocity=64, time=current_time))
+            # Add note on event with current velocity
+            track.append(Message('note_on', note=note, velocity=current_velocity, time=current_time))
             active_notes[note] = 0
             current_time = 0
 

@@ -19,8 +19,8 @@ torch.manual_seed(1337)
 batch_size = 64
 block_size = 256  # Context length
 max_iters = 5000
-n_embed = 256  # Embedding dimension
-n_layer = 3  # Number of transformer blocks
+n_embed = 384  # Embedding dimension
+n_layer = 4  # Number of transformer blocks
 n_head = 4  # Number of attention heads (n_embed must be divisible by n_head)
 dropout = 0.2  # Dropout probability (0.0 = no dropout, 0.2 = 20% dropout)
 eval_interval = 250
