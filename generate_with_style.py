@@ -6,6 +6,7 @@ Allows specifying style, tempo, mood, dynamics, and texture.
 import torch
 import json
 import argparse
+from tqdm import tqdm
 from models import SimpleTransformer
 from decode_midi import tokens_to_midi, play_with_pygame
 
@@ -250,13 +251,22 @@ def generate_from_prompt(
     end_token_id = vocab.get('<END>', None)
 
     with torch.no_grad():
+        pbar = tqdm(total=max_tokens, desc="Generating", unit="tokens")
+        def update_progress(current, total):
+            pbar.n = current
+            pbar.refresh()
+
         generated = model.generate(
             context,
             max_new_tokens=max_tokens,
             temperature=temperature,
             top_k=top_k,
-            end_token_id=end_token_id
+            end_token_id=end_token_id,
+            progress_callback=update_progress
         )
+        pbar.n = pbar.total
+        pbar.refresh()
+        pbar.close()
 
     print(f"Generated {generated.shape[1]} tokens total")
 
