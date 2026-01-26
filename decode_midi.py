@@ -5,7 +5,6 @@ Utility functions to convert generated token sequences back to MIDI files.
 import json
 import os
 import sys
-import pygame
 from mido import MidiFile, MidiTrack, Message, MetaMessage
 
 

@@ -1,7 +1,20 @@
+import os
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
 from load_midi_data import load_midi_dataset, get_batch
+from dotenv import load_dotenv
+
+# read config into env variables
+load_dotenv()
+
+dataset = os.getenv("DATASET")
+datasets_dir = "./datasets"
+dataset_dir = f"{datasets_dir}/{dataset}"
+dataset_input_dir = f"{dataset_dir}/data"
+tokenized_output_dir = f"{dataset_dir}/tokenized_midi"
+tokenized_ints_output_dir = f"{dataset_dir}/tokenized_midi_int"
+
 
 # Set random seed for reproducibility
 torch.manual_seed(1337)
@@ -16,7 +29,7 @@ print("="*60)
 
 # Load MIDI dataset
 dataset = load_midi_dataset(
-    data_dir='tokenized_midi_int',
+    data_dir=f"{tokenized_ints_output_dir}",
     vocab_path='vocab.json',
     train_ratio=0.9,
     add_separators=True,

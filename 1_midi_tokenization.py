@@ -31,9 +31,13 @@ import pretty_midi
 from typing import List
 import glob
 from tqdm import tqdm
+from dotenv import load_dotenv
+
+# read config into env variables
+load_dotenv()
 
 datasets_dir = "./datasets"
-dataset = "kaggle"
+dataset = os.getenv("DATASET")
 
 dataset_dir = f"{datasets_dir}/{dataset}"
 dataset_input_dir = f"{dataset_dir}/data"

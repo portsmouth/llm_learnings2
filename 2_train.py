@@ -2,13 +2,26 @@
 Example training loop for MIDI music generation using the tokenized dataset.
 This demonstrates how to use the data loader for actual training.
 """
-
+import os
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
 from load_midi_data import load_midi_dataset, get_batch
 from decode_midi import tokens_to_midi, play_midi
 from models import SimpleTransformer
+from dotenv import load_dotenv
+
+# read config into env variables
+load_dotenv()
+
+dataset = os.getenv("DATASET")
+datasets_dir = "./datasets"
+dataset_dir = f"{datasets_dir}/{dataset}"
+dataset_input_dir = f"{dataset_dir}/data"
+tokenized_output_dir = f"{dataset_dir}/tokenized_midi"
+tokenized_ints_output_dir = f"{dataset_dir}/tokenized_midi_int"
+vocab_path = f"{dataset_dir}/vocab.json"
+
 
 # Set random seed for reproducibility
 torch.manual_seed(1337)
@@ -29,8 +42,8 @@ print("="*60)
 
 # Load MIDI dataset
 dataset = load_midi_dataset(
-    data_dir='tokenized_midi_int',
-    vocab_path='vocab.json',
+    data_dir=tokenized_ints_output_dir,
+    vocab_path=vocab_path,
     train_ratio=0.9,
     add_separators=True,
     device=device
