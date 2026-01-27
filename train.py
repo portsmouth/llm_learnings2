@@ -2,7 +2,7 @@ import os
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
-from load_midi_data import load_midi_dataset, get_batch
+from midiUtils import load_midi_dataset, get_batch
 from dotenv import load_dotenv
 
 # read config into env variables

@@ -6,8 +6,7 @@ import os
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
-from load_midi_data import load_midi_dataset, get_batch
-from decode_midi import tokens_to_midi, play_midi
+from midiUtils import load_midi_dataset, get_batch, tokens_to_midi, play_midi
 from models import SimpleTransformer
 from dotenv import load_dotenv
 
@@ -37,6 +36,8 @@ learning_rate = 3e-4
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 eval_iters = 200
 
+
+print(f"{torch.version.cuda}")
 print(f"Using device: {device}")
 print("="*60)
 

@@ -12,7 +12,7 @@ import torch
 import json
 import os
 import sys
-from decode_midi import tokens_to_midi, play_midi
+from midiUtils import tokens_to_midi, play_midi
 from models import BigramLanguageModel, SimpleTransformer
 def load_vocab(vocab_path='vocab.json'):
     """Load vocabulary from JSON file."""
