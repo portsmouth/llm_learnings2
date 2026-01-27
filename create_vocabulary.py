@@ -3,14 +3,15 @@ import json
 from collections import Counter
 from pathlib import Path
 
-def build_vocabulary(tokenized_dir, max_time_shift=512):
+def build_vocabulary(tokenized_dir, max_time_shift=512, num_velocity_bins=8):
     """
     Build a complete vocabulary mapping tokens to integers.
-    Generates tokens for ALL possible MIDI notes (0-127) and time shifts (0-max_time_shift).
+    Generates tokens for ALL possible MIDI notes (0-127), velocities, and time shifts.
 
     Args:
         tokenized_dir: Directory containing tokenized MIDI files (used to count token frequencies)
         max_time_shift: Maximum time shift value to include in vocabulary
+        num_velocity_bins: Number of velocity bins (default: 8)
 
     Returns:
         vocab: Dictionary mapping token strings to integer IDs
@@ -36,6 +37,32 @@ def build_vocabulary(tokenized_dir, max_time_shift=512):
     # Special tokens: PAD, START, END
     special_tokens = ['<PAD>', '<START>', '<END>']
 
+    # Style tokens for conditional generation
+    style_tokens = [
+        # Musical style/period
+        '<STYLE_BAROQUE>', '<STYLE_CLASSICAL>', '<STYLE_ROMANTIC>', '<STYLE_IMPRESSIONIST>',
+
+        # Tempo
+        '<TEMPO_VERY_SLOW>', '<TEMPO_SLOW>', '<TEMPO_MODERATE>', '<TEMPO_FAST>', '<TEMPO_VERY_FAST>',
+
+        # Mood/character
+        '<MOOD_BRIGHT>', '<MOOD_DARK>', '<MOOD_DRAMATIC>', '<MOOD_CALM>', '<MOOD_PLAYFUL>',
+
+        # Dynamics
+        '<DYN_SOFT>', '<DYN_MEDIUM>', '<DYN_LOUD>',
+
+        # Texture
+        '<TEXTURE_SPARSE>', '<TEXTURE_MODERATE>', '<TEXTURE_RICH>',
+
+        # Form
+        '<FORM_SONATA>', '<FORM_PRELUDE>', '<FORM_FUGUE>', '<FORM_WALTZ>', '<FORM_MAZURKA>',
+        '<FORM_NOCTURNE>', '<FORM_ETUDE>', '<FORM_IMPROMPTU>', '<FORM_SCHERZO>',
+        '<FORM_POLONAISE>', '<FORM_CONCERTO>',
+    ]
+
+    # Generate ALL possible velocity tokens (0 to num_velocity_bins-1)
+    velocity_tokens = [f'VEL_{i}' for i in range(num_velocity_bins)]
+
     # Generate ALL possible note tokens (0-127)
     note_on_tokens = [f'NOTE_ON_{i}' for i in range(128)]
     note_off_tokens = [f'NOTE_OFF_{i}' for i in range(128)]
@@ -49,6 +76,16 @@ def build_vocabulary(tokenized_dir, max_time_shift=512):
 
     # Add special tokens first
     for token in special_tokens:
+        vocab[token] = idx
+        idx += 1
+
+    # Add style tokens
+    for token in style_tokens:
+        vocab[token] = idx
+        idx += 1
+
+    # Add velocity tokens
+    for token in velocity_tokens:
         vocab[token] = idx
         idx += 1
 
@@ -134,12 +171,16 @@ def print_vocabulary_stats(vocab, token_counts):
     print(f"Total vocabulary size: {len(vocab)} tokens")
 
     # Count token types
+    velocity_tokens = sum(1 for k in vocab.keys() if k.startswith('VEL_'))
     note_on_tokens = sum(1 for k in vocab.keys() if k.startswith('NOTE_ON_'))
     note_off_tokens = sum(1 for k in vocab.keys() if k.startswith('NOTE_OFF_'))
     time_shift_tokens = sum(1 for k in vocab.keys() if k.startswith('TIME_SHIFT_'))
-    special_tokens = sum(1 for k in vocab.keys() if k.startswith('<'))
+    special_tokens = sum(1 for k in vocab.keys() if k in ['<PAD>', '<START>', '<END>'])
+    style_tokens = sum(1 for k in vocab.keys() if k.startswith('<') and k.endswith('>') and k not in ['<PAD>', '<START>', '<END>'])
 
-    print(f"  Special tokens: {special_tokens}")
+    print(f"  Special tokens: {special_tokens} (<PAD>, <START>, <END>)")
+    print(f"  Style tokens: {style_tokens} (for style conditioning)")
+    print(f"  Velocity tokens: {velocity_tokens} (8 bins covering MIDI velocity 0-127)")
     print(f"  NOTE_ON tokens: {note_on_tokens} (covering MIDI notes 0-127)")
     print(f"  NOTE_OFF tokens: {note_off_tokens} (covering MIDI notes 0-127)")
     print(f"  TIME_SHIFT tokens: {time_shift_tokens}")
@@ -155,6 +196,8 @@ def print_vocabulary_stats(vocab, token_counts):
 
     print("\nSample token mappings:")
     sample_tokens = ['<PAD>', '<START>', '<END>',
+                     '<STYLE_ROMANTIC>', '<TEMPO_FAST>', '<MOOD_CALM>', '<DYN_SOFT>',
+                     'VEL_0', 'VEL_4', 'VEL_7',
                      'NOTE_ON_0', 'NOTE_ON_60', 'NOTE_ON_127',
                      'NOTE_OFF_0', 'NOTE_OFF_60', 'NOTE_OFF_127',
                      'TIME_SHIFT_64ND_0', 'TIME_SHIFT_64ND_1', 'TIME_SHIFT_64ND_7']
@@ -186,7 +229,7 @@ if __name__ == "__main__":
     print("\nConverting tokenized files to integer sequences...")
     convert_all_files(tokenized_dir, vocab, 'tokenized_midi_int')
 
-    print("\n✓ Done! Vocabulary created and all files converted.")
+    print("\nDone! Vocabulary created and all files converted.")
     print(f"  - Vocabulary saved to: vocab.json")
     print(f"  - Integer sequences saved to: tokenized_midi_int/")
 

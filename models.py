@@ -256,7 +256,7 @@ class SimpleTransformer(nn.Module):
 
         return logits, loss
 
-    def generate(self, idx, max_new_tokens, temperature=1.0, top_k=None, end_token_id=None):
+    def generate(self, idx, max_new_tokens, temperature=1.0, top_k=None, end_token_id=None, progress_callback=None):
         """
         Generate new tokens from the model.
 
@@ -266,11 +266,14 @@ class SimpleTransformer(nn.Module):
             temperature: Sampling temperature (higher = more random, lower = more conservative)
             top_k: If set, only sample from top k most likely tokens
             end_token_id: If set, stop generation when this token is sampled
+            progress_callback: Optional callable(current, total) for progress updates
 
         Returns:
             (B, T+max_new_tokens) tensor of generated token indices
         """
-        for _ in range(max_new_tokens):
+        for i in range(max_new_tokens):
+            if progress_callback:
+                progress_callback(i, max_new_tokens)
 
             # crop idx to the last block_size tokens
             idx_cond = idx[:, -self.block_size:]

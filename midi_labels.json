@@ -1,0 +1,2067 @@
+{
+  "albeniz\\alb_esp1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_esp2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_esp3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_esp4.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_esp5.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_esp6.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_se1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_se2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_se3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_se4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_se5.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_se6.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_se7.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "albeniz\\alb_se8.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "bach\\bach_846.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_BAROQUE>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "bach\\bach_847.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_BAROQUE>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "bach\\bach_850.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_BAROQUE>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "balakir\\islamei.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_RICH>"
+  ],
+  "beeth\\appass_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\appass_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\appass_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "beeth\\beethoven_hammerklavier_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_hammerklavier_2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_hammerklavier_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_hammerklavier_4.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_les_adieux_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_les_adieux_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_les_adieux_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "beeth\\beethoven_opus10_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_opus10_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "beeth\\beethoven_opus10_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_opus22_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_opus22_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_opus22_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_opus22_4.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_opus90_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\beethoven_opus90_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\elise.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\mond_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "beeth\\mond_2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\mond_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "beeth\\pathetique_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\pathetique_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\pathetique_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\waldstein_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "beeth\\waldstein_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "beeth\\waldstein_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "borodin\\bor_ps1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "borodin\\bor_ps2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "borodin\\bor_ps3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "borodin\\bor_ps4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "borodin\\bor_ps5.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "borodin\\bor_ps6.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "borodin\\bor_ps7.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "brahms\\brahms_opus117_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "brahms\\brahms_opus117_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "brahms\\brahms_opus1_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "brahms\\brahms_opus1_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "brahms\\brahms_opus1_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "brahms\\brahms_opus1_4.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "brahms\\br_im2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "brahms\\br_im5.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "brahms\\BR_IM6.MID": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "brahms\\br_rhap.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "burgm\\burg_agitato.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "burgm\\burg_erwachen.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "burgm\\burg_geschwindigkeit.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "burgm\\burg_gewitter.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "burgm\\burg_perlen.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "burgm\\burg_quelle.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "burgm\\burg_spinnerlied.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "burgm\\burg_sylphen.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "burgm\\burg_trennung.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p10.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p11.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p12.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn-p13.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p14.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn-p15.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p16.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn-p17.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn-p18.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p19.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn-p2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "chopin\\chpn-p20.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "chopin\\chpn-p21.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p22.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn-p23.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p24.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn-p5.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn-p6.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "chopin\\chpn-p7.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "chopin\\chpn-p8.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn-p9.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "chopin\\chpn_op10_e01.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op10_e05.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn_op10_e12.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn_op23.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op25_e1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn_op25_e11.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn_op25_e12.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn_op25_e2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op25_e3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn_op25_e4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn_op27_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op27_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op33_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op33_4.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op35_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op35_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op35_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op35_4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn_op53.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_RICH>"
+  ],
+  "chopin\\chpn_op66.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op7_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chpn_op7_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chp_op18.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "chopin\\chp_op31.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "debussy\\debussy_cc_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_IMPRESSIONIST>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "debussy\\debussy_cc_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_IMPRESSIONIST>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "debussy\\debussy_cc_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_IMPRESSIONIST>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "debussy\\debussy_cc_4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_IMPRESSIONIST>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "debussy\\debussy_cc_6.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_IMPRESSIONIST>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "debussy\\DEB_CLAI.MID": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_IMPRESSIONIST>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "debussy\\deb_menu.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_IMPRESSIONIST>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "debussy\\DEB_PASS.MID": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_IMPRESSIONIST>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "debussy\\deb_prel.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_IMPRESSIONIST>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "granados\\gra_esp_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "granados\\gra_esp_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "granados\\gra_esp_4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_album.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_berceuse.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_brooklet.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "grieg\\grieg_butterfly.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_elfentanz.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_halling.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_kobold.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "grieg\\grieg_march.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_once_upon_a_time.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_spring.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_voeglein.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_waechter.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "grieg\\grieg_walzer.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_wanderer.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "grieg\\grieg_wedding.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "grieg\\grieg_zwerge.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_33_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_33_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "haydn\\haydn_33_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_35_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_35_2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_35_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_43_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_43_2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_43_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_7_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_7_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_7_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_8_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_8_2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_8_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "haydn\\haydn_8_4.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_9_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_9_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\haydn_9_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\hay_40_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "haydn\\hay_40_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "liszt\\liz_donjuan.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_RICH>"
+  ],
+  "liszt\\liz_et1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "liszt\\liz_et2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "liszt\\liz_et3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_RICH>"
+  ],
+  "liszt\\liz_et4.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "liszt\\liz_et5.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "liszt\\liz_et6.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "liszt\\liz_et_trans4.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "liszt\\liz_et_trans5.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_RICH>"
+  ],
+  "liszt\\liz_et_trans8.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "liszt\\liz_liebestraum.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "liszt\\liz_rhap02.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "liszt\\liz_rhap09.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "liszt\\liz_rhap10.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_RICH>"
+  ],
+  "liszt\\liz_rhap12.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "liszt\\liz_rhap15.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "mendelssohn\\mendel_op19_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mendelssohn\\mendel_op19_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mendelssohn\\mendel_op19_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "mendelssohn\\mendel_op19_4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mendelssohn\\mendel_op19_5.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mendelssohn\\mendel_op19_6.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "mendelssohn\\mendel_op30_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mendelssohn\\mendel_op30_2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mendelssohn\\mendel_op30_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "mendelssohn\\mendel_op30_4.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_RICH>"
+  ],
+  "mendelssohn\\mendel_op30_5.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mendelssohn\\mendel_op53_5.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mendelssohn\\mendel_op62_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mendelssohn\\mendel_op62_4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mendelssohn\\mendel_op62_5.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_311_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "mozart\\mz_311_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "mozart\\mz_311_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_330_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_330_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "mozart\\mz_330_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_331_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_331_2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_331_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_332_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_332_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_332_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_333_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_333_2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_333_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_545_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_545_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_545_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_570_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "mozart\\mz_570_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "mozart\\mz_570_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "muss\\muss_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "muss\\muss_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "muss\\muss_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "muss\\muss_4.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "muss\\muss_5.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "muss\\muss_6.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "muss\\muss_7.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "muss\\muss_8.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schubert_D850_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schubert_D850_2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schubert_D850_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schubert_D850_4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schubert_D935_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schubert_D935_2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schubert_D935_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schubert_D935_4.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schub_d760_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schub_d760_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schub_d760_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schub_d760_4.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "schubert\\schub_d960_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schub_d960_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "schubert\\schub_d960_3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schub_d960_4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schuim-1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schuim-2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schuim-3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schuim-4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schumm-1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schumm-2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schumm-3.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schumm-4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schumm-5.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "schubert\\schumm-6.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schu_143_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schu_143_2.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schubert\\schu_143_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\schum_abegg.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_RICH>"
+  ],
+  "schumann\\scn15_1.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn15_10.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "schumann\\scn15_11.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn15_12.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "schumann\\scn15_13.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "schumann\\scn15_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn15_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn15_4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn15_5.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn15_6.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn15_7.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "schumann\\scn15_8.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn15_9.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn16_1.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn16_2.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn16_3.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn16_4.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "schumann\\scn16_5.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn16_6.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "schumann\\scn16_7.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn16_8.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn68_10.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "schumann\\scn68_12.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_ROMANTIC>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "tschai\\ty_april.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "tschai\\ty_august.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "tschai\\ty_dezember.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "tschai\\ty_februar.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "tschai\\ty_januar.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "tschai\\ty_juli.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "tschai\\ty_juni.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "tschai\\ty_maerz.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_VERY_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "tschai\\ty_mai.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "tschai\\ty_november.mid": [
+    "<DYN_MEDIUM>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_MODERATE>",
+    "<TEXTURE_MODERATE>"
+  ],
+  "tschai\\ty_oktober.mid": [
+    "<DYN_SOFT>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_SLOW>",
+    "<TEXTURE_SPARSE>"
+  ],
+  "tschai\\ty_september.mid": [
+    "<DYN_LOUD>",
+    "<MOOD_CALM>",
+    "<STYLE_CLASSICAL>",
+    "<TEMPO_FAST>",
+    "<TEXTURE_MODERATE>"
+  ]
+}
