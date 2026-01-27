@@ -88,6 +88,7 @@ def load_model(model_path, vocab_size, device='cpu', model_type='auto'):
 def generate_midi_from_model(
     model_path='midi_model.pth',
     vocab_path='vocab.json',
+    reverse_vocab_path='reverse_vocab.json',
     output_path='generated_music.mid',
     num_tokens=1000,
     temperature=1.0,
@@ -181,7 +182,7 @@ def generate_midi_from_model(
 
     # Convert to MIDI
     print(f"\nConverting to MIDI file: {output_path}")
-    midi_path = tokens_to_midi(generated[0].cpu(), output_path)
+    midi_path = tokens_to_midi(generated[0].cpu(), reverse_vocab_path, output_path)
 
     # Optionally play the MIDI
     if play:
@@ -240,6 +241,13 @@ Examples:
     )
 
     parser.add_argument(
+        '--reverse_vocab', '-v',
+        type=str,
+        default='reverse_vocab.json',
+        help='Path to reverse vocabulary JSON file (default: reverse_vocab.json)'
+    )
+
+    parser.add_argument(
         '--output', '-o',
         type=str,
         default='generated_music.mid',
@@ -294,6 +302,7 @@ Examples:
     generate_midi_from_model(
         model_path=args.model,
         vocab_path=args.vocab,
+        reverse_vocab_path=args.reverse_vocab,
         output_path=args.output,
         num_tokens=args.tokens,
         temperature=args.temperature,

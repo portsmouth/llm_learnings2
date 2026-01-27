@@ -22,6 +22,7 @@ dataset_input_dir = f"{dataset_dir}/data"
 tokenized_output_dir = f"{dataset_dir}/tokenized_midi"
 tokenized_ints_output_dir = f"{dataset_dir}/tokenized_midi_int"
 vocab_path = f"{dataset_dir}/vocab.json"
+reverse_vocab_path = f"{dataset_dir}/reverse_vocab.json"
 
 
 # Set random seed for reproducibility
@@ -220,7 +221,7 @@ print("Model saved to midi_model.pth")
 print("\n" + "="*60)
 print("Converting generated output to MIDI...")
 print("="*60)
-midi_path = tokens_to_midi(generated[0].cpu(), 'generated_music.mid')
+midi_path = tokens_to_midi(generated[0].cpu(), reverse_vocab_path, 'generated_music.mid')
 
 # Play the generated MIDI file
 print("\nAttempting to play generated MIDI...")
