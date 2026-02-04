@@ -1,0 +1,317 @@
+"""
+Command-line tool to generate new MIDI files from trained models.
+
+Usage:
+    python generate_midi.py --model midi_model.pth --output my_music.mid --tokens 1000
+    python generate_midi.py --model midi_model.pth --output my_music.mid --tokens 500 --temperature 1.2
+    python generate_midi.py  # Uses defaults
+"""
+
+import argparse
+import torch
+import json
+import os
+import sys
+from midiUtils import tokens_to_midi, play_midi
+from models import BigramLanguageModel, SimpleTransformer
+def load_vocab(vocab_path='vocab.json'):
+    """Load vocabulary from JSON file."""
+    with open(vocab_path, 'r') as f:
+        vocab = json.load(f)
+    return vocab
+
+
+def load_model(model_path, vocab_size, device='cpu', model_type='auto'):
+    """Load a trained model from checkpoint.
+
+    Args:
+        model_path: Path to model checkpoint
+        vocab_size: Size of vocabulary
+        device: Device to load model on
+        model_type: 'bigram', 'transformer', or 'auto' to detect from checkpoint
+    """
+    # Load checkpoint to inspect architecture
+    checkpoint = torch.load(model_path, map_location=device)
+
+    # Check if this is a full checkpoint with config or just state_dict
+    if isinstance(checkpoint, dict) and 'model' in checkpoint:
+        state_dict = checkpoint['model']
+        config = checkpoint.get('config', {})
+    else:
+        state_dict = checkpoint
+        config = {}
+
+    # Auto-detect model type if needed
+    if model_type == 'auto':
+        if 'position_embedding_table.weight' in state_dict:
+            model_type = 'transformer'
+        else:
+            model_type = 'bigram'
+        print(f"  Auto-detected model type: {model_type}")
+
+    # Create appropriate model
+    if model_type == 'transformer':
+        # Try to get parameters from config first, then infer from state_dict
+        block_size = config.get('block_size')
+        n_embed = config.get('n_embed')
+        n_layer = config.get('n_layer', 3)
+        n_head = config.get('n_head', 4)
+        dropout = config.get('dropout', 0.0)  # Dropout is 0.0 at inference time
+
+        if block_size is None and 'position_embedding_table.weight' in state_dict:
+            block_size = state_dict['position_embedding_table.weight'].shape[0]
+        if n_embed is None and 'token_embedding_table.weight' in state_dict:
+            n_embed = state_dict['token_embedding_table.weight'].shape[1]
+
+        # Infer number of layers from state_dict
+        if n_layer is None:
+            n_layer = sum(1 for k in state_dict.keys() if k.startswith('blocks.') and k.endswith('.ln1.weight'))
+
+        # Infer number of heads from attention structure
+        if n_head is None and 'blocks.0.sa_head.heads.0.key.weight' in state_dict:
+            n_head = sum(1 for k in state_dict.keys() if k.startswith('blocks.0.sa_head.heads.') and k.endswith('.key.weight'))
+
+        # Check if feedforward layer exists
+        use_ffwd = 'blocks.0.ffwd.net.0.weight' in state_dict
+
+        print(f"  Inferred parameters: block_size={block_size}, n_embed={n_embed}, n_layer={n_layer}, n_head={n_head}, dropout={dropout}, use_ffwd={use_ffwd}")
+        # Note: dropout is always 0.0 during inference (model.eval() disables dropout anyway)
+        model = SimpleTransformer(vocab_size, block_size, n_embed, n_layer=n_layer, n_head=n_head, dropout=0.0, use_ffwd=use_ffwd).to(device)
+    else:
+        model = BigramLanguageModel(vocab_size).to(device)
+
+    model.load_state_dict(state_dict)
+    model.eval()
+    return model, model_type
+
+
+def generate_midi_from_model(
+    model_path='midi_model.pth',
+    vocab_path='vocab.json',
+    reverse_vocab_path='reverse_vocab.json',
+    output_path='generated_music.mid',
+    num_tokens=1000,
+    temperature=1.0,
+    top_k=None,
+    seed=None,
+    device=None,
+    play=False
+):
+    """
+    Generate a MIDI file from a trained model.
+
+    Args:
+        model_path: Path to the trained model (.pth file)
+        vocab_path: Path to vocabulary JSON file
+        output_path: Path where MIDI file will be saved
+        num_tokens: Maximum number of tokens to generate
+        temperature: Sampling temperature (default 1.0)
+        top_k: If set, use top-k sampling
+        seed: Random seed for reproducibility
+        device: Device to use ('cuda' or 'cpu')
+        play: Whether to play the MIDI after generation
+
+    Returns:
+        Path to generated MIDI file
+    """
+    # Set random seed if provided
+    if seed is not None:
+        torch.manual_seed(seed)
+
+    # Determine device
+    if device is None:
+        device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+    print(f"Using device: {device}")
+
+    # Check if model exists
+    if not os.path.exists(model_path):
+        print(f"Error: Model file not found: {model_path}")
+        sys.exit(1)
+
+    # Check if vocab exists
+    if not os.path.exists(vocab_path):
+        print(f"Error: Vocabulary file not found: {vocab_path}")
+        sys.exit(1)
+
+    # Load vocabulary
+    print(f"Loading vocabulary from {vocab_path}...")
+    vocab = load_vocab(vocab_path)
+    vocab_size = len(vocab)
+    print(f"  Vocabulary size: {vocab_size}")
+
+    # Load model
+    print(f"Loading model from {model_path}...")
+    model, model_type = load_model(model_path, vocab_size, device)
+    num_params = sum(p.numel() for p in model.parameters())
+    print(f"  Model parameters: {num_params:,}")
+
+    # Prepare initial context
+    end_token_id = vocab.get('<END>', None)
+    start_token_id = vocab.get('<START>', None)
+
+    if start_token_id is not None:
+        context = torch.tensor([[start_token_id]], dtype=torch.long, device=device)
+        print(f"  Using <START> token (ID={start_token_id}) as initial context")
+    elif end_token_id is not None:
+        context = torch.tensor([[end_token_id]], dtype=torch.long, device=device)
+        print(f"  Using <END> token (ID={end_token_id}) as initial context")
+    else:
+        context = torch.zeros((1, 1), dtype=torch.long, device=device)
+        print(f"  Using zero token as initial context")
+
+    # Generate tokens
+    print(f"\nGenerating up to {num_tokens} tokens...")
+    print(f"  Temperature: {temperature}")
+    if top_k:
+        print(f"  Top-k: {top_k}")
+    if end_token_id:
+        print(f"  Will stop early if <END> token (ID={end_token_id}) is generated")
+
+    with torch.no_grad():
+        generated = model.generate(
+            context,
+            max_new_tokens=num_tokens,
+            temperature=temperature,
+            top_k=top_k,
+            end_token_id=end_token_id
+        )
+
+    num_generated = generated.shape[1]
+    print(f"✓ Generated {num_generated} tokens")
+
+    # Convert to MIDI
+    print(f"\nConverting to MIDI file: {output_path}")
+    midi_path = tokens_to_midi(generated[0].cpu(), reverse_vocab_path, output_path)
+
+    # Optionally play the MIDI
+    if play:
+        print("\nPlaying generated MIDI...")
+        try:
+            play_midi(midi_path)
+        except Exception as e:
+            print(f"Could not play MIDI: {e}")
+            print("You can manually open the MIDI file in any MIDI player or DAW")
+
+    print("\n" + "="*60)
+    print(f"✓ Successfully generated: {midi_path}")
+    print("="*60)
+
+    return midi_path
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='Generate MIDI files from trained language models',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Generate with default settings
+  python generate_midi.py
+
+  # Generate with custom model and output
+  python generate_midi.py --model my_model.pth --output my_song.mid
+
+  # Generate more tokens with higher randomness
+  python generate_midi.py --tokens 2000 --temperature 1.5
+
+  # Use top-k sampling for more focused output
+  python generate_midi.py --top-k 50 --temperature 0.8
+
+  # Generate and play immediately
+  python generate_midi.py --play
+
+  # Use specific random seed for reproducibility
+  python generate_midi.py --seed 42
+        """
+    )
+
+    parser.add_argument(
+        '--model', '-m',
+        type=str,
+        default='midi_model.pth',
+        help='Path to trained model file (default: midi_model.pth)'
+    )
+
+    parser.add_argument(
+        '--vocab', '-v',
+        type=str,
+        default='vocab.json',
+        help='Path to vocabulary JSON file (default: vocab.json)'
+    )
+
+    parser.add_argument(
+        '--reverse_vocab', '-v',
+        type=str,
+        default='reverse_vocab.json',
+        help='Path to reverse vocabulary JSON file (default: reverse_vocab.json)'
+    )
+
+    parser.add_argument(
+        '--output', '-o',
+        type=str,
+        default='generated_music.mid',
+        help='Output MIDI file path (default: generated_music.mid)'
+    )
+
+    parser.add_argument(
+        '--tokens', '-t',
+        type=int,
+        default=1000,
+        help='Maximum number of tokens to generate (default: 1000)'
+    )
+
+    parser.add_argument(
+        '--temperature',
+        type=float,
+        default=1.0,
+        help='Sampling temperature (higher=more random, lower=more conservative, default: 1.0)'
+    )
+
+    parser.add_argument(
+        '--top-k',
+        type=int,
+        default=None,
+        help='Use top-k sampling with k most likely tokens (optional)'
+    )
+
+    parser.add_argument(
+        '--seed',
+        type=int,
+        default=None,
+        help='Random seed for reproducibility (optional)'
+    )
+
+    parser.add_argument(
+        '--device',
+        type=str,
+        choices=['cpu', 'cuda'],
+        default=None,
+        help='Device to use for generation (default: auto-detect)'
+    )
+
+    parser.add_argument(
+        '--play', '-p',
+        action='store_true',
+        help='Play the generated MIDI file after creation'
+    )
+
+    args = parser.parse_args()
+
+    # Generate MIDI
+    generate_midi_from_model(
+        model_path=args.model,
+        vocab_path=args.vocab,
+        reverse_vocab_path=args.reverse_vocab,
+        output_path=args.output,
+        num_tokens=args.tokens,
+        temperature=args.temperature,
+        top_k=args.top_k,
+        seed=args.seed,
+        device=args.device,
+        play=args.play
+    )
+
+
+if __name__ == '__main__':
+    main()
